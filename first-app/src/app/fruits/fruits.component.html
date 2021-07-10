@@ -1,0 +1,13 @@
+<!--String Interpolation binding -->
+<p>Fruit name is {{ getName() }}</p>
+
+<!--Properties binding -->
+<button
+  type="button"
+  class="btn btn-primary"
+  [disabled]="!buttonStatus" 
+  (click)="fruitName()"
+>
+  Click
+</button>
+<p>{{ name }}</p>
