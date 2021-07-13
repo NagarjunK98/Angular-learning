@@ -3,15 +3,47 @@
 
 <!--Two way Data binding -->
 <label>Fruit name</label>
-<input type="text" class="form-control" [(ngModel)]="name" />
+<input type="text" class="form-control" [(ngModel)]="name1" />
 
 <!--Properties binding -->
 <button
   type="button"
   class="btn btn-primary"
-  [disabled]="!buttonStatus"
-  (click)="fruitName()"
+  [disabled]="!buttonStatus1"
+  (click)="fruitName1()"
 >
   Click
 </button>
-<p>{{ fruitStatus }}</p>
+<p>{{ fruitStatus1 }}</p>
+
+<!--Assignment-1 use concept of two way binding, property binding-->
+<label>Fruit name</label>
+<input type="text" class="form-control" [(ngModel)]="name2" />
+<p>{{ name2 }}</p>
+<!--Properties binding -->
+<button
+  type="button"
+  class="btn btn-primary"
+  [disabled]="name2 === ''"
+  (click)="name2 = ''"
+>
+  Click
+</button>
+<p>{{ fruitStatus2 }}</p>
+
+<!-- ngIf else example -->
+<label>Fruit name</label>
+<input type="text" class="form-control" [(ngModel)]="name3" />
+<!--Properties binding -->
+<button type="button" class="btn btn-primary" (click)="fruitName2()">
+  Click
+</button>
+<p *ngIf="displayStatus; else fruitStatus">Entered fruit name is {{ name3 }}</p>
+<ng-template #fruitStatus>
+  <p>No fruit is entered</p>
+</ng-template>
+
+<!--ngStyle example-->
+<input type="text" class="form-control" [(ngModel)]="name4" />
+<button type="button" class="btn btn-primary" (click)="setColor()">Click</button>
+<p [ngStyle]="{ backgroundColor: getColor()}">The fruit name is {{name4}}</p>

@@ -5,8 +5,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./fruits.component.css'],
 })
 export class FruitComponent {
-  name = 'Apple';
-  fruitStatus = "No fruit is added";
+  name1 = '';
+  name2 = '';
+  name3 = '';
+  name4 = '';
+  fruitStatus1 = 'No fruit is added';
+  fruitStatus2 = 'Empty fruit';
+  statusCheck = false;
+  displayStatus = false;
+  color="";
   getName() {
     const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let result = 0;
@@ -15,14 +22,27 @@ export class FruitComponent {
     });
     return result;
   }
-  buttonStatus = false;
+  buttonStatus1 = false;
 
   constructor() {
     setTimeout(() => {
-      this.buttonStatus = true;
+      this.buttonStatus1 = true;
     }, 2000);
   }
-  fruitName() {
-    this.fruitStatus="Fruit added is "+ this.name;
+  fruitName1() {
+    this.fruitStatus1 = 'Fruit added is ' + this.name1;
+  }
+  fruitName2() {
+    this.displayStatus = true;
+  }
+  setColor() {
+    if(this.name4.length % 2 ==0) {
+      this.color = "green";
+    } else {
+      this.color="red";
+    }
+  }
+  getColor() {
+    return this.color;
   }
 }
