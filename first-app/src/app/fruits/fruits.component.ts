@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 })
 export class FruitComponent {
   name = 'Apple';
+  fruitStatus = "No fruit is added";
   getName() {
     const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let result = 0;
@@ -22,6 +23,6 @@ export class FruitComponent {
     }, 2000);
   }
   fruitName() {
-    this.name = 'Mango';
+    this.fruitStatus="Fruit added is "+ this.name;
   }
 }
