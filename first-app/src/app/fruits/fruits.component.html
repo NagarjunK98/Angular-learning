@@ -1,11 +1,15 @@
 <!--String Interpolation binding -->
 <p>Fruit name is {{ getName() }}</p>
 
+<!--Two way Data binding -->
+<label>Fruit name</label>
+<input type="text" class="form-control" [(ngModel)]="name" />
+
 <!--Properties binding -->
 <button
   type="button"
   class="btn btn-primary"
-  [disabled]="!buttonStatus" 
+  [disabled]="!buttonStatus"
   (click)="fruitName()"
 >
   Click
