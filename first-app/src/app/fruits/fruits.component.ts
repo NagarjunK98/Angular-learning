@@ -13,7 +13,8 @@ export class FruitComponent {
   fruitStatus2 = 'Empty fruit';
   statusCheck = false;
   displayStatus = false;
-  color="";
+  color = '';
+  fruits = ['apple', 'orange'];
   getName() {
     const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let result = 0;
@@ -36,10 +37,10 @@ export class FruitComponent {
     this.displayStatus = true;
   }
   setColor() {
-    if(this.name4.length % 2 ==0) {
-      this.color = "green";
+    if (this.name4.length % 2 == 0) {
+      this.color = 'green';
     } else {
-      this.color="red";
+      this.color = 'red';
     }
   }
   getColor() {
