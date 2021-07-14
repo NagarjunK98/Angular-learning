@@ -16,6 +16,9 @@ export class FruitComponent {
   color = '';
   fruits = ['apple', 'orange'];
   fruitPick = 'orange';
+  pipeName = 'welcome to angular';
+  pipeNumber = 1.234;
+  pipeDate = new Date();
   getName() {
     const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let result = 0;

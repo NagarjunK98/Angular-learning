@@ -59,5 +59,31 @@
   <div *ngSwitchCase="'mango'">You picked mango</div>
   <div *ngSwitchCase="'orange'">You picked orange</div>
   <div *ngSwitchCase="'banana'">You picked banana</div>
-  <div *ngSwitchDefault>pick again </div>
+  <div *ngSwitchDefault>pick again</div>
 </div>
+
+<!-- pipes example-->
+
+<!-- strings example-->
+<p>{{ pipeName }}</p>
+<p>{{ pipeName | lowercase }}</p>
+<p>{{ pipeName | uppercase }}</p>
+<p>{{ pipeName | titlecase }}</p>
+<p>{{ pipeName | slice: 0:5 }}</p>
+
+<!--numbers example-->
+<p>{{ pipeNumber }}</p>
+<p>{{ pipeNumber | number: "1.2-3" }}</p>
+<p>{{ pipeNumber | number: "3.2-3" }}</p>
+
+<!-- currency example-->
+<p>{{ 0.5 | currency }}</p>
+
+<!--datetime example-->
+<p>{{ pipeDate }}</p>
+<p>{{ pipeDate | date:'shortTime' }}</p>
+<p>{{ pipeDate | date: 'shortDate' }}</p>
+<p>{{ pipeDate | date:'mediumTime' }}</p>
+<p>{{ pipeDate | date: 'mediumDate' }}</p>
+<p>{{ pipeDate | date:'longTime' }}</p>
+<p>{{ pipeDate | date: 'longDate' }}</p>
