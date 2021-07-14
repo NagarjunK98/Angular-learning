@@ -53,3 +53,11 @@
 <!--ngFor example-->
 <p>Fruits in the list are:</p>
 <div *ngFor="let i of fruits">{{ i }}</div>
+
+<!--ngSwitch example-->
+<div [ngSwitch]="fruitPick">
+  <div *ngSwitchCase="'mango'">You picked mango</div>
+  <div *ngSwitchCase="'orange'">You picked orange</div>
+  <div *ngSwitchCase="'banana'">You picked banana</div>
+  <div *ngSwitchDefault>pick again </div>
+</div>

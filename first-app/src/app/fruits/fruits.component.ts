@@ -15,6 +15,7 @@ export class FruitComponent {
   displayStatus = false;
   color = '';
   fruits = ['apple', 'orange'];
+  fruitPick = 'orange';
   getName() {
     const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let result = 0;
