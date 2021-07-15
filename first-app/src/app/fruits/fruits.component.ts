@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FruitserviceService } from './../fruitservice.service';
 @Component({
   selector: 'app-fruit',
   templateUrl: './fruits.component.html',
   styleUrls: ['./fruits.component.css'],
 })
-export class FruitComponent {
+export class FruitComponent implements OnInit {
   name1 = '';
   name2 = '';
   name3 = '';
@@ -19,7 +20,8 @@ export class FruitComponent {
   pipeName = 'welcome to angular';
   pipeNumber = 1.234;
   pipeDate = new Date();
-  getName() {
+  fruitsList = [];
+  getCount() {
     const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let result = 0;
     a.forEach((element) => {
@@ -29,10 +31,13 @@ export class FruitComponent {
   }
   buttonStatus1 = false;
 
-  constructor() {
+  constructor(private _fruitService: FruitserviceService) {
     setTimeout(() => {
       this.buttonStatus1 = true;
     }, 2000);
+  }
+  ngOnInit() {
+    this._fruitService.getFruits().subscribe((data) => (this.fruitsList = data));
   }
   fruitName1() {
     this.fruitStatus1 = 'Fruit added is ' + this.name1;

@@ -1,11 +1,14 @@
 <!--String Interpolation binding -->
-<p>Fruit count is {{ getName() }}</p>
+<h3>1. String Interpolation</h3>
+<p>Fruit count is {{ getCount() }}</p>
 
 <!--Two way Data binding -->
+<h3>2. Two way data binding</h3>
 <label>Fruit name</label>
 <input type="text" class="form-control" [(ngModel)]="name1" />
 
 <!--Properties binding -->
+<h3>3. Property binding</h3>
 <button
   type="button"
   class="btn btn-primary"
@@ -17,6 +20,7 @@
 <p>{{ fruitStatus1 }}</p>
 
 <!--Assignment-1 use concept of two way binding, property binding-->
+<h3>Assignment</h3>
 <label>Fruit name</label>
 <input type="text" class="form-control" [(ngModel)]="name2" />
 <p>{{ name2 }}</p>
@@ -32,6 +36,7 @@
 <p>{{ fruitStatus2 }}</p>
 
 <!-- ngIf else example -->
+<h3>4. ngIf else example</h3>
 <label>Fruit name</label>
 <input type="text" class="form-control" [(ngModel)]="name3" />
 <!--Properties binding -->
@@ -44,6 +49,7 @@
 </ng-template>
 
 <!--ngStyle example-->
+<h3>5. ngStyle example</h3>
 <input type="text" class="form-control" [(ngModel)]="name4" />
 <button type="button" class="btn btn-primary" (click)="setColor()">
   Click
@@ -51,10 +57,12 @@
 <p [ngStyle]="{ backgroundColor: getColor() }">The fruit name is {{ name4 }}</p>
 
 <!--ngFor example-->
+<h3>6. ngFor example</h3>
 <p>Fruits in the list are:</p>
 <div *ngFor="let i of fruits">{{ i }}</div>
 
 <!--ngSwitch example-->
+<h3>7. ngSwitch example</h3>
 <div [ngSwitch]="fruitPick">
   <div *ngSwitchCase="'mango'">You picked mango</div>
   <div *ngSwitchCase="'orange'">You picked orange</div>
@@ -63,8 +71,9 @@
 </div>
 
 <!-- pipes example-->
-
+<h3>8. Pipes</h3>
 <!-- strings example-->
+<h4>a. string example</h4>
 <p>{{ pipeName }}</p>
 <p>{{ pipeName | lowercase }}</p>
 <p>{{ pipeName | uppercase }}</p>
@@ -72,18 +81,26 @@
 <p>{{ pipeName | slice: 0:5 }}</p>
 
 <!--numbers example-->
+<h4>b. number example</h4>
 <p>{{ pipeNumber }}</p>
 <p>{{ pipeNumber | number: "1.2-3" }}</p>
 <p>{{ pipeNumber | number: "3.2-3" }}</p>
 
 <!-- currency example-->
+<h4>c. currency example</h4>
 <p>{{ 0.5 | currency }}</p>
 
 <!--datetime example-->
+<h4>d. Date time example</h4>
 <p>{{ pipeDate }}</p>
-<p>{{ pipeDate | date:'shortTime' }}</p>
-<p>{{ pipeDate | date: 'shortDate' }}</p>
-<p>{{ pipeDate | date:'mediumTime' }}</p>
-<p>{{ pipeDate | date: 'mediumDate' }}</p>
-<p>{{ pipeDate | date:'longTime' }}</p>
-<p>{{ pipeDate | date: 'longDate' }}</p>
+<p>{{ pipeDate | date: "shortTime" }}</p>
+<p>{{ pipeDate | date: "shortDate" }}</p>
+<p>{{ pipeDate | date: "mediumTime" }}</p>
+<p>{{ pipeDate | date: "mediumDate" }}</p>
+<p>{{ pipeDate | date: "longTime" }}</p>
+<p>{{ pipeDate | date: "longDate" }}</p>
+
+<!-- Services & http client example:-->
+<h3>9. Services & http fetch example</h3>
+<p>Fruits available are:</p>
+<p *ngFor="let fruit of fruitsList">{{ fruit.id }}. {{ fruit.name }}</p>
