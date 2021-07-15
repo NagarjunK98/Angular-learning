@@ -21,6 +21,7 @@ export class FruitComponent implements OnInit {
   pipeNumber = 1.234;
   pipeDate = new Date();
   fruitsList = [];
+  errorMsg = '';
   getCount() {
     const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let result = 0;
@@ -37,7 +38,10 @@ export class FruitComponent implements OnInit {
     }, 2000);
   }
   ngOnInit() {
-    this._fruitService.getFruits().subscribe((data) => (this.fruitsList = data));
+    this._fruitService.getFruits().subscribe(
+      (data) => (this.fruitsList = data),
+      (error) => (this.errorMsg = error)
+    );
   }
   fruitName1() {
     this.fruitStatus1 = 'Fruit added is ' + this.name1;

@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FruitComponent } from './fruits/fruits.component';
-import { FruitserviceService } from './fruitservice.service';
+import { AppRouterModule } from './app-routing.module';
+import { FruitListComponent } from './fruit-list/fruit-list.component';
+
 @NgModule({
-  declarations: [AppComponent, FruitComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule],
-  providers: [FruitserviceService],
+  declarations: [AppComponent, FruitComponent, FruitListComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRouterModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
